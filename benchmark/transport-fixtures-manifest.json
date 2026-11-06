@@ -1,0 +1,484 @@
+{
+  "cases": {
+    "F29": {
+      "expected": {
+        "mode": "native_reference_and_bridge",
+        "native_ids": [
+          "test_output.TransportOutput.test_payload"
+        ],
+        "native_outcome": "one success, no repeats",
+        "output_check": "Retained raw files must contain the exact contiguous payload once; do not UTF-8 decode before comparison.",
+        "protocol": "Valid independent frames; stdout/stderr content is never parsed as protocol.",
+        "raw_payloads": {
+          "stderr": {
+            "bytes": 262496,
+            "occurrences": 1,
+            "sha256": "217aed2e7d70a709d1028f9077c7214d63837d75402d115223c0baf22fadeae0"
+          },
+          "stdout": {
+            "bytes": 262492,
+            "occurrences": 1,
+            "sha256": "3f4df46e1bb4b07f9f12ab7391dc0fe19187332c4857a4fdcf3fada2595c4a77"
+          }
+        },
+        "trace": [
+          "F29:body:start",
+          "F29:body:end"
+        ],
+        "watchdog_seconds": 45
+      },
+      "variants": {
+        "output_isolation": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_output.py": {
+              "bytes": 718,
+              "sha256": "241d7b0f171232d7dfbb59dd26b0d7edbe9e02c58d24c072b5923542133f6e74"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        }
+      }
+    },
+    "F30": {
+      "expected": {
+        "abrupt_exit": {
+          "custody": "Retain acknowledged prefix; active group incomplete, remaining group unexecuted; no invented failure callback or passing group.",
+          "mode": "controlled_native_exit_and_bridge",
+          "retries": 0,
+          "session_exit": "nonzero",
+          "status": "incomplete",
+          "target_exit": 23,
+          "trace": [
+            "F30:body:entered"
+          ]
+        },
+        "partial_frame_eof": {
+          "acknowledged_plan": false,
+          "custody": "Explicit partial frame/EOF diagnostic and no successful final artifact.",
+          "mode": "fake_target_executable",
+          "native_bodies": 0,
+          "retries": 0,
+          "session_exit": "nonzero",
+          "status": "incomplete",
+          "wire_hex": "000000407b22736368656d615f76657273696f6e223a",
+          "worker_exit": 24
+        }
+      },
+      "variants": {
+        "abrupt_exit": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_abrupt.py": {
+              "bytes": 259,
+              "sha256": "d647654809277563f1233bddc494fb08939e6dae6889127ea5b8a7fa6a0ec068"
+            },
+            "tests/test_zz_remaining.py": {
+              "bytes": 172,
+              "sha256": "9231c56b3862d8f31fdf77d3504ae889f9d7f8ef617220fd077f03c195bf7440"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "partial_frame_eof": {
+          "files": {
+            "partial_worker.py": {
+              "bytes": 177,
+              "sha256": "7cc994a05a44987a2584ac2c53549393f6a8bfbd29e404478576e978fa71414d"
+            }
+          }
+        }
+      }
+    },
+    "F31": {
+      "expected": {
+        "duplicate_sequence_trace": [
+          "F31:a:body"
+        ],
+        "error_code": "invalid_request",
+        "error_type": "error",
+        "faults": {
+          "duplicate_sequence": "After plan/select and first valid run, resend the identical sequence=1 run command for the first group.",
+          "out_of_order_group": "Select both groups in native order, then request the second group first with sequence=1.",
+          "oversized_frame": "After selection, send only a length header declaring MAX_FRAME_BYTES+1; no body follows.",
+          "unknown_group": "After selection, send sequence=1 run for __suitebridge_unknown_group__."
+        },
+        "mode": "protocol_client_against_real_worker",
+        "other_variant_trace": [],
+        "oversized_frame_hex": "00100001",
+        "plan_modules": [
+          "test_a_group",
+          "test_b_group"
+        ],
+        "retries": 0,
+        "watchdog_seconds": 45,
+        "worker_exit": "nonzero",
+        "worker_must_be_reaped": true
+      },
+      "variants": {
+        "duplicate_sequence": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_a_group.py": {
+              "bytes": 141,
+              "sha256": "4ec2bb66593ca77b07feceac768fe48fbd1c16a6af81be09853bee4c3c8bed71"
+            },
+            "tests/test_b_group.py": {
+              "bytes": 142,
+              "sha256": "e4d2f190e9d6c79c980f88239c716d8c9d514e536ec8cb9c649ff9327fa442c2"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "out_of_order_group": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_a_group.py": {
+              "bytes": 141,
+              "sha256": "4ec2bb66593ca77b07feceac768fe48fbd1c16a6af81be09853bee4c3c8bed71"
+            },
+            "tests/test_b_group.py": {
+              "bytes": 142,
+              "sha256": "e4d2f190e9d6c79c980f88239c716d8c9d514e536ec8cb9c649ff9327fa442c2"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "oversized_frame": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_a_group.py": {
+              "bytes": 141,
+              "sha256": "4ec2bb66593ca77b07feceac768fe48fbd1c16a6af81be09853bee4c3c8bed71"
+            },
+            "tests/test_b_group.py": {
+              "bytes": 142,
+              "sha256": "e4d2f190e9d6c79c980f88239c716d8c9d514e536ec8cb9c649ff9327fa442c2"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "unknown_group": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_a_group.py": {
+              "bytes": 141,
+              "sha256": "4ec2bb66593ca77b07feceac768fe48fbd1c16a6af81be09853bee4c3c8bed71"
+            },
+            "tests/test_b_group.py": {
+              "bytes": 142,
+              "sha256": "e4d2f190e9d6c79c980f88239c716d8c9d514e536ec8cb9c649ff9327fa442c2"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        }
+      }
+    },
+    "F32": {
+      "expected": {
+        "artifact": "Valid interrupted/incomplete native artifact or explicit report-generation error, never a successful final artifact.",
+        "cancellation": "Send one SIGINT to the frontend PID after the readiness event; do not initially signal the worker or its descendant.",
+        "cleanup_deadline_seconds": 5,
+        "emergency_cleanup": "Harness may kill only identity-verified owned groups after the deadline; needing this cleanup is a failed fixture, not a pass.",
+        "live_processes_after_cleanup": 0,
+        "mode": "controlled_frontend_cancellation_only",
+        "ownership": "Match PID plus /proc start_time from readiness before assessing or emergency-cleaning the worker/descendant; never act on a reused PID.",
+        "readiness_deadline_seconds": 30,
+        "readiness_event": "F32:body:entered",
+        "retries": 0,
+        "session_exit": "nonzero",
+        "status": "interrupted or incomplete",
+        "worker_requirement": "Frontend reaps its worker; worker is absent, descendant absent or dead zombie; no matching live process remains."
+      },
+      "variants": {
+        "cancel_owned_worker": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_cancel.py": {
+              "bytes": 733,
+              "sha256": "d65528fc8cb86765a5bd28474881d45b926959f210808d6863e8f63c9acf3a4f"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        }
+      }
+    },
+    "F33": {
+      "expected": {
+        "alias_actions": [
+          "Create target_alias/bin and target_alias/lib/python3.14.",
+          "Symlink target_alias/bin/python to the existing target executable without changing that executable.",
+          "Copy the existing target pyvenv.cfg unchanged.",
+          "Symlink target_alias/lib/python3.14/site-packages to existing target site-packages."
+        ],
+        "frontend_environment": "Existing pytest venv with Pygments 2.21.0; frontend execution path/prefix remain separate.",
+        "frontend_ids": [
+          "frontend_cases/test_frontend_environment.py::test_frontend_environment"
+        ],
+        "mode": "mixed_frontend_and_native_invocation",
+        "native_environment": "Existing no-Pygments target venv, requested symlinked bin/python path retained exactly; sys.prefix is that target venv.",
+        "native_ids": [
+          "test_environment.NativeEnvironment.test_target_environment"
+        ],
+        "path_policy": "Use absolute lexical venv/bin/python paths for execution. The existing target is a copied regular executable; the second variant uses the approved fixture-owned target_alias facade.",
+        "required_environment": [
+          "SUITEBRIDGE_EXPECTED_TARGET_EXECUTABLE",
+          "SUITEBRIDGE_EXPECTED_TARGET_PREFIX",
+          "SUITEBRIDGE_FORBIDDEN_FRONTEND_SITE",
+          "SUITEBRIDGE_EXPECTED_FRONTEND_EXECUTABLE",
+          "SUITEBRIDGE_EXPECTED_FRONTEND_PREFIX",
+          "SUITEBRIDGE_EXPECT_TARGET_SYMLINK"
+        ],
+        "result": "Both populations pass exactly once, or report a real environment mismatch; no environment substitution.",
+        "trace_event_multiset": [
+          "F33:native:verified",
+          "F33:frontend:verified"
+        ]
+      },
+      "variants": {
+        "mixed_existing_venv": {
+          "files": {
+            "frontend_cases/test_frontend_environment.py": {
+              "bytes": 390,
+              "sha256": "8b2e802b792e7156e876c7218309d0862f495d8ca0d8791a441941904c38609f"
+            },
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_environment.py": {
+              "bytes": 957,
+              "sha256": "46defc62084d9f2be25606cc9c7e3b1af26ccec2b15b7e60b2e4d9bef77e29ec"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "mixed_symlinked_venv": {
+          "files": {
+            "frontend_cases/test_frontend_environment.py": {
+              "bytes": 390,
+              "sha256": "8b2e802b792e7156e876c7218309d0862f495d8ca0d8791a441941904c38609f"
+            },
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_environment.py": {
+              "bytes": 957,
+              "sha256": "46defc62084d9f2be25606cc9c7e3b1af26ccec2b15b7e60b2e4d9bef77e29ec"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        }
+      }
+    },
+    "F34": {
+      "expected": {
+        "artifact": "An explicit configuration diagnostic and no successful native artifact; missing output is not a pass.",
+        "invalid_native_root": {
+          "native_root": "<fixture-root>/invalid_native_root",
+          "precondition": "Native root is the supplied regular file; target interpreter is valid."
+        },
+        "mode": "configuration_error",
+        "native_bodies": 0,
+        "nonexistent_target": {
+          "precondition": "Path must not exist; native project root is otherwise valid.",
+          "target_path": "<fixture-root>/does-not-exist/bin/python"
+        },
+        "retries": 0,
+        "session_exit": "nonzero explicit usage/collection/infrastructure error",
+        "trace": [],
+        "worker_substitution": false
+      },
+      "variants": {
+        "invalid_native_root": {
+          "files": {
+            "invalid_native_root": {
+              "bytes": 56,
+              "sha256": "b74664125cd51a875594b14a879cc99c0d6f8cb579ac5cc9b9ef738038a554b7"
+            },
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_forbidden.py": {
+              "bytes": 158,
+              "sha256": "f74d5671385200437480b8700e504ec8ffe2af512223b9fc34f78060b0ad604a"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        },
+        "nonexistent_target": {
+          "files": {
+            "tests/__init__.py": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "tests/test_forbidden.py": {
+              "bytes": 158,
+              "sha256": "f74d5671385200437480b8700e504ec8ffe2af512223b9fc34f78060b0ad604a"
+            },
+            "transport_trace.py": {
+              "bytes": 295,
+              "sha256": "0cacfe2bf76d5935a5612193ecea06cb9bdc772b04c5dc20028b0fb8923c8339"
+            }
+          }
+        }
+      }
+    }
+  },
+  "frozen_utc": "2026-11-06T09:04:34.236264+00:00",
+  "original_frozen_source_sha256": "4fdbd8008d10d0b1aae180d345f8417583cb3ffed3a98f5d8b942bc61bdbbd4c",
+  "portable_adaptation": {
+    "configuration": "Explicit target/frontend interpreter arguments; Linux/Python3.14 venv layout preserved.",
+    "expected_case_behavior_changed": false,
+    "literal_fixture_files_changed": false,
+    "partial_frame_launcher": "Generated POSIX launcher executes unchanged frozen shim with supplied frontend Python."
+  },
+  "schema_version": 1,
+  "scope": "Frozen fixture sources and expected behavior, not product implementation or observed results.",
+  "source": "Original frozen fixture literals, retained in portable transport_fixtures.py",
+  "validation": [
+    {
+      "case": "F29",
+      "python_sources_parse": true,
+      "variant": "output_isolation"
+    },
+    {
+      "case": "F30",
+      "python_sources_parse": true,
+      "variant": "abrupt_exit"
+    },
+    {
+      "case": "F30",
+      "python_sources_parse": true,
+      "variant": "partial_frame_eof"
+    },
+    {
+      "case": "F31",
+      "python_sources_parse": true,
+      "variant": "duplicate_sequence"
+    },
+    {
+      "case": "F31",
+      "python_sources_parse": true,
+      "variant": "unknown_group"
+    },
+    {
+      "case": "F31",
+      "python_sources_parse": true,
+      "variant": "out_of_order_group"
+    },
+    {
+      "case": "F31",
+      "python_sources_parse": true,
+      "variant": "oversized_frame"
+    },
+    {
+      "case": "F32",
+      "python_sources_parse": true,
+      "variant": "cancel_owned_worker"
+    },
+    {
+      "case": "F33",
+      "python_sources_parse": true,
+      "variant": "mixed_existing_venv"
+    },
+    {
+      "case": "F33",
+      "python_sources_parse": true,
+      "variant": "mixed_symlinked_venv"
+    },
+    {
+      "case": "F34",
+      "python_sources_parse": true,
+      "variant": "nonexistent_target"
+    },
+    {
+      "case": "F34",
+      "python_sources_parse": true,
+      "variant": "invalid_native_root"
+    }
+  ],
+  "validation_scope": "Parsed all literal Python sources and compared deterministic F29 byte expressions; no fixture materialization, fixture/test/worker execution or product import.",
+  "wire": {
+    "body": "UTF-8 JSON object",
+    "environment": [
+      "SUITEBRIDGE_COMMAND_FD",
+      "SUITEBRIDGE_RESPONSE_FD",
+      "SUITEBRIDGE_INVOCATION_ID"
+    ],
+    "frame_header": "4-byte unsigned big-endian body byte length",
+    "max_frame_bytes": 1048576,
+    "message_types": [
+      "plan",
+      "select",
+      "selected",
+      "run",
+      "group_result",
+      "finish",
+      "finished",
+      "error"
+    ],
+    "nongroup_group_id": null,
+    "required_fields": [
+      "schema_version",
+      "type",
+      "sequence",
+      "invocation_id",
+      "group_id"
+    ],
+    "sequence": "Each direction starts at 0 and increases by exactly one."
+  }
+}

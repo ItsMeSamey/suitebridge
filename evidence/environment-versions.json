@@ -1,0 +1,9 @@
+{
+  "platform": "Linux x86_64",
+  "python": "3.14.8",
+  "target": {"PyYAML": "6.0.3", "packaging": "26.3", "Pygments": null},
+  "frontend": {"pytest": "9.2.0", "iniconfig": "2.3.1", "packaging": "26.3", "pluggy": "1.7.0", "Pygments": "2.21.0", "PyYAML": "6.0.3", "coverage": "7.17.2", "pytest-testmon": "2.3.0"},
+  "frontend_plugins": "Autoload disabled; testmon is not invoked.",
+  "provenance": "Target PyYAML and packaging were copied from existing installed packages, with retained local file manifests. Frontend pytest and dependencies came from pinned PyPI wheels; hashes are in THIRD_PARTY_NOTICES.md. No fresh-install byte reproducibility is claimed.",
+  "public_requirements": "requirements-frontend.txt lists frontend runtime dependencies. This record additionally lists already-present unused validation-environment packages. requirements-target.txt is separate and excludes Pygments."
+}

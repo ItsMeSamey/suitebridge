@@ -1,0 +1,150 @@
+{
+  "candidate_archive_sha256": "b8afefee607a2032622099647942a2fc7de91cbe6d7461dde4cfa7ad0fa8dfec",
+  "concurrency": "Integration, transport and demo had overlapping runtime. Timings are receipts only; no speed comparison is claimed.",
+  "demo": {
+    "passed": true,
+    "source_pins": {
+      "suitebridge.py": "f1ceb8a11520270a6cb1d85f2b50d80b65171a285f7c436fa581de07bcd39507",
+      "suitebridge_protocol.py": "00f979e2b9c4a10e8669b9c67a6826a31ffc2747571b6864cc0bdad427ad6eb8",
+      "suitebridge_worker.py": "85de98cd8e24b4ea6f7e7007f566e1f77c6bd77a3e0d52d07c793ef11dbc730e"
+    },
+    "sources_unchanged": true,
+    "stages": [
+      {
+        "checks_passed": true,
+        "stage": "pristine"
+      },
+      {
+        "checks_passed": true,
+        "stage": "injected-R3"
+      },
+      {
+        "checks_passed": true,
+        "stage": "selected-module"
+      }
+    ]
+  },
+  "demo_export": {
+    "demo.cast": {
+      "exported_sha256": "076ec6354f6700967d211a6370b01affbdf9eb086f13b2c5b9ed1b0caa7a435f",
+      "normalization": "Only the final output-root path is replaced with <local-demo-output>; output and timestamps otherwise unchanged.",
+      "raw_sha256": "e69dfe5e75d365a5b1a5717c7fd25470de9767761126c4257d615897a95966ad"
+    },
+    "transcript.txt": {
+      "exported_sha256": "3968bd3f80ee9d36a6e3f4c82a6304ca8206889ce9deff1692eba49aab21d58f",
+      "normalization": "Only the final output-root path is replaced with <local-demo-output>; output and timestamps otherwise unchanged.",
+      "raw_sha256": "f3b8070abbbaad4cdf749d6822979da9d9db1cf861e5d2066355a251716a1aba"
+    }
+  },
+  "integration": {
+    "baseline_reporting_observations": [
+      {
+        "case": "F26/main",
+        "observations": [
+          "atomic: JUnit declared tests does not match testcase elements",
+          "atomic: Interrupted invocation has no identified nonpassing pytest item"
+        ]
+      }
+    ],
+    "case_failures": [],
+    "cases_run": 40,
+    "changed_environments": [],
+    "changed_sources": [],
+    "complete_scope": true,
+    "controller_cpu_seconds": 3.539505,
+    "evaluator_version": 2,
+    "integration_pass": true,
+    "no_speed_claim": true,
+    "process_cpu_seconds": 47.99269,
+    "transport_scope": "F29-F34 have an independent owner and are not covered by this summary.",
+    "wall_seconds": 131.54751448397292
+  },
+  "notice": "Authored public summary of actual isolated-extraction runs. Raw machine-specific receipts remain separately retained; this is not the complete raw archive.",
+  "raw_summary_sha256": {
+    "demo": "3197ed4123a888b79250bdb21ee461c994f18cffb2149f28f8e63d0e842cc3dd",
+    "integration": "f707170a1ec688363c44b2f2df782e12dcb7b03b02e0ac54fc670b4ccb4f50ea",
+    "transport": "40f553f1eb3c14c8c2a5d7a384bb57012bee4b2c15f9aa5415c323e205e773c3"
+  },
+  "schema_version": 1,
+  "transport": {
+    "all_frozen_variants_requested": true,
+    "all_requested_cases_completed": true,
+    "existing_environments_unchanged": true,
+    "passed": true,
+    "product_sources_unchanged": true
+  },
+  "transport_case_results": [
+    {
+      "case": "F29",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "output_isolation"
+    },
+    {
+      "case": "F30",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "abrupt_exit"
+    },
+    {
+      "case": "F30",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "partial_frame_eof"
+    },
+    {
+      "case": "F31",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "duplicate_sequence"
+    },
+    {
+      "case": "F31",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "unknown_group"
+    },
+    {
+      "case": "F31",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "out_of_order_group"
+    },
+    {
+      "case": "F31",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "oversized_frame"
+    },
+    {
+      "case": "F32",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "cancel_owned_worker"
+    },
+    {
+      "case": "F33",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "mixed_existing_venv"
+    },
+    {
+      "case": "F33",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "mixed_symlinked_venv"
+    },
+    {
+      "case": "F34",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "nonexistent_target"
+    },
+    {
+      "case": "F34",
+      "failed_checks": [],
+      "passed": true,
+      "variant": "invalid_native_root"
+    }
+  ]
+}

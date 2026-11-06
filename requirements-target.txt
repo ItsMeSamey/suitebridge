@@ -1,0 +1,4 @@
+# Benchmark target runtime. Use a separate venv without system site-packages.
+# Do not install the frontend requirements or Pygments in this environment.
+PyYAML==6.0.3
+packaging==26.3

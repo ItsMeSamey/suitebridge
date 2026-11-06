@@ -1,0 +1,109 @@
+{
+  "archive_sha256": "d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a",
+  "change_semantics": "Independent variants against identical untouched base; no cumulative state. Prior mutation outcomes are known, not held out.",
+  "corpus": "Markdown 3.9 pinned sdist",
+  "original_workload_sha256": "66d95db4644d0ea4e7a980a573d8301ac3326b7d87a01010405e376135afc314",
+  "schema_version": 1,
+  "variants": [
+    {
+      "id": "R0",
+      "origin_cases": [],
+      "patches": []
+    },
+    {
+      "id": "R1",
+      "origin_cases": [
+        "C01"
+      ],
+      "patches": [
+        {
+          "after": "key = m1.group('key').upper().strip()",
+          "base_sha256": "bffe14abb9db710efa575600bea54f88d2db44b2101c9b277ec93eb4def44666",
+          "before": "key = m1.group('key').lower().strip()",
+          "expected_occurrences": 1,
+          "mutated_sha256": "13c981083c6c91386fd8a8a1166594749e137c6da9ce2fa483c88214c9409084",
+          "op": "replace",
+          "path": "markdown/extensions/meta.py"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "origin_cases": [
+        "C16"
+      ],
+      "patches": [
+        {
+          "after": "div.set('class', 'footnotes')",
+          "base_sha256": "3065ec3fdd41b5ebff9aaf6c872f68ac251de329ab76fb7cf6783e34d5c72130",
+          "before": "div.set('class', 'footnote')",
+          "expected_occurrences": 1,
+          "mutated_sha256": "357838788678221f0db9fef9177fcd5f556a6727d52bbb43de8c9c11d6e6469a",
+          "op": "replace",
+          "path": "markdown/extensions/footnotes.py"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "origin_cases": [
+        "C01",
+        "C16"
+      ],
+      "patches": [
+        {
+          "after": "key = m1.group('key').upper().strip()",
+          "base_sha256": "bffe14abb9db710efa575600bea54f88d2db44b2101c9b277ec93eb4def44666",
+          "before": "key = m1.group('key').lower().strip()",
+          "expected_occurrences": 1,
+          "mutated_sha256": "13c981083c6c91386fd8a8a1166594749e137c6da9ce2fa483c88214c9409084",
+          "op": "replace",
+          "path": "markdown/extensions/meta.py"
+        },
+        {
+          "after": "div.set('class', 'footnotes')",
+          "base_sha256": "3065ec3fdd41b5ebff9aaf6c872f68ac251de329ab76fb7cf6783e34d5c72130",
+          "before": "div.set('class', 'footnote')",
+          "expected_occurrences": 1,
+          "mutated_sha256": "357838788678221f0db9fef9177fcd5f556a6727d52bbb43de8c9c11d6e6469a",
+          "op": "replace",
+          "path": "markdown/extensions/footnotes.py"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "origin_cases": [
+        "C15"
+      ],
+      "patches": [
+        {
+          "after": "import unittest\nfrom markdown import markdown\n\nclass TestAddedRegression(unittest.TestCase):\n    def test_plain_text_contract(self):\n        self.assertEqual(markdown('plain'), '<p>changed</p>')\n",
+          "base_sha256": null,
+          "before": "",
+          "expected_occurrences": 0,
+          "mutated_sha256": "48a9cd6bc4022682dccd1e51d4c53ff90107027026d9360fe40c44a77d5655ab",
+          "op": "create",
+          "path": "tests/test_changeproof_added.py"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "origin_cases": [
+        "C28"
+      ],
+      "patches": [
+        {
+          "after": "    def check_get_version(self):",
+          "base_sha256": "e6c76fb62ecd886987b98e3a1abc21048d5dddb574156497d72ae94477210c0d",
+          "before": "    def test_get_version(self):",
+          "expected_occurrences": 1,
+          "mutated_sha256": "0983f1fc5a881f69f0d63deb8474843a4dd29ac2c1e962f3154a50d220199333",
+          "op": "replace",
+          "path": "tests/test_meta.py"
+        }
+      ]
+    }
+  ]
+}

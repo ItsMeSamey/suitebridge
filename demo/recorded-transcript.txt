@@ -1,0 +1,28 @@
+SuiteBridge: native unittest outcomes inside module-level pytest reports
+Real corpus: pinned Markdown 3.9 sdist; R3 is an intentionally injected regression.
+The same existing native environment is used for every stage. No timing-gain claim.
+
+pristine: tests
+Running the actual pytest command; complete output is retained in this stage.
+Native: 1024 started, 5 skipped, 0 assertion failures. JUnit: 31 module items, 0 failing.
+Expected outcome: PASS
+
+injected-R3: tests
+Running the actual pytest command; complete output is retained in this stage.
+Native: 1024 started, 5 skipped, 36 assertion failures. JUnit: 31 module items, 5 failing.
+  native-module[test_extensions]
+  native-module[test_legacy]
+  native-module[test_syntax.extensions.test_footnotes]
+  native-module[test_syntax.extensions.test_md_in_html]
+  native-module[test_syntax.extensions.test_toc]
+Expected outcome: PASS
+
+selected-module: tests::native-module[test_extensions]
+Running the actual pytest command; complete output is retained in this stage.
+Native: 20 started, 0 skipped, 4 assertion failures. JUnit: 1 module items, 1 failing.
+  native-module[test_extensions]
+Omitted native groups: 30; they remain unvalidated in this invocation.
+Expected outcome: PASS
+
+Demo checks: PASS
+Full commands, stdout/stderr, native JSON and JUnit XML: <local-demo-output>

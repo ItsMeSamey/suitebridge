@@ -1,0 +1,48 @@
+{
+  "changed_functions": {
+    "main": "Adds explicit required location arguments and bounded input guards; seals portable evidence names. Case order, role execution, comparisons, summary gate and error preservation unchanged.",
+    "validate_freeze": "Reads portable subset freeze and packaged plain corpus manifest. Same source/corpus mismatch logic."
+  },
+  "fixture_sources_byte_identical": 109,
+  "fixture_variants": 32,
+  "original_evaluator_sha256": "124a7da9f997df5da8136e0d6cedf6efc3e44001af943aa2a802504196b8026d",
+  "original_freeze_validation": {
+    "entries": 124,
+    "mismatches": []
+  },
+  "portable_evaluator_sha256": "b231b906f5a8bdf7cd3da4a8df9d74a6a3d8ea949b35c9a1c4b6dd228dd603c0",
+  "portable_freeze_sha256": "6d17bf80a100509bf51e1477f4d466b48fadbc3a0f2656abc301109aa2f7d89f",
+  "product_executed": false,
+  "schema_version": 1,
+  "total_cases": 40,
+  "unchanged_constants": [
+    "STRICT",
+    "EVENT_FIELDS",
+    "FAILURES",
+    "EVALUATOR_VERSION"
+  ],
+  "unchanged_function_ast_sha256": {
+    "assess": "af01c6fed53285f5ac4dcd83229b0f0170b029e12eabef63f97e313b7e9fcdbc",
+    "cases": "cd9cf4cae3badf7cc67226dac2035d12ad3f76bdba1fbe00ca69a0b5ec56bc69",
+    "check_invocation": "5d954fd288b65f172908490ca4ecbf9229822d8de744b126380b76382ac9cb09",
+    "compare_native": "de42b2fae3a34f176a8a08aacf36f645bbd6472d844442aec0f805cec0040cc6",
+    "environment": "46306ec6c6248fd244a9ba4f2302c0b956a927ac20ab31fdef7c4feb7748a604",
+    "execute": "c5a7e2432ae2ec3c9a55b1b323635ef490d800334660ed03c3f602698d5305a5",
+    "group_reporting_issues": "fd78322a9b6ba32d26039613183644b3374fe14b869c2737203ab73488cc3f53",
+    "load_native": "4a117b25ae6a8e9dd9754b628b62579b4e7257d6b62fd23c2eade1c1f3159a38",
+    "materialize": "0a63798ba6a9ce931121d56ae6ca01c41239e13a4ae4f6fd2278c18755902300",
+    "native_events": "b2e3c33a09e2d16b12c23d3a0260604a1ffac7e25b3416a243c229bfab8f784c",
+    "normalize": "60e9b6ec2ec93292e903df5629f1d6e407778cc3cced9f6f5c8f3c834d4e9df0",
+    "observe_descendants": "a0b4bafcbf6e59c77f1749b54edb401d28b6e4557ec635799aa029bc8f20bed9",
+    "parse_junit": "099480bb137cadfbc28b635e40d9c09a55d217898421a6e3c9eccc0014e74929",
+    "proc_identity": "19fb685ea326a85aafdd5af3cd148ed1b08d61ff94a8c4431cb69f5510a11335",
+    "read": "873943d820e94f52db0116768bed3f3edf5514250366b81cf1a46e20ac555711",
+    "reporting_finding": "9551e0da138e8f4ff55f622d897c5c41049cbd2a1b7c49bf213de37fdf8a7ce4",
+    "run_process": "b61abbafb7d7ba12c48b5656bf23287ef47c2ae7900c47d1b7dd15f34d4a03ad",
+    "save": "4a6595a24aaec39da341ab962fc9a695fd93701864de4e4e1dde5411954cebad",
+    "sha": "dea095f888fc12e5f2187d68be78584a748cff0db26ee4e55397ba1469cd00bf",
+    "terminate_owned": "bd4f643ba3c22c3b5d0a106bc9276c8487305f740aca452b61d82b0cf8128224",
+    "trace_parts": "b2f3ee90ca41441af8dabbabb84e28eb078335b6a871bdc81e2e8bb7d77a962b",
+    "tree_manifest": "8799dfc147f53377aa2388867a9e712b0ac857531b170ecea6cd2bd3a303fa36"
+  }
+}

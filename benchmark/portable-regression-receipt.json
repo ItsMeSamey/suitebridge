@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "benchmark/integration_tests",
+    "-v"
+  ],
+  "corpus_executed": false,
+  "exit_code": 0,
+  "failed": 0,
+  "kind": "harness_only_regression_receipt",
+  "passed": 22,
+  "private_workspace_path_matches": [],
+  "product_executed": false,
+  "reported_test_seconds": 0.136,
+  "schema_version": 1,
+  "source_freeze_and_corpus_manifest_validated": true,
+  "sources": {
+    "benchmark/integration_tests/test_harness.py": "b1809c3388c616cac6e07c39b74988a72576335c6ce561a947dbb0314ef80e1f",
+    "benchmark/integration_tests/test_portability.py": "5ddc6cb3f3c6e9ae0be525e5ac8da5c312c0830e9fbcbae589b7ab8784e588a3",
+    "benchmark/portable_integration.py": "b231b906f5a8bdf7cd3da4a8df9d74a6a3d8ea949b35c9a1c4b6dd228dd603c0"
+  },
+  "tests": 22
+}

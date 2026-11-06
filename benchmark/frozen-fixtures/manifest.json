@@ -1,0 +1,440 @@
+{
+  "construction_notes": [
+    "F19 initial source exposed a mandatory-argument TestCase to default loading; moved its definition inside lazy iteration before any fixture execution. No observed outcome motivated this correction."
+  ],
+  "projects": [
+    {
+      "description": "Two modules/classes/methods with complete lifecycle traces.",
+      "id": "F01",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F01/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_a.py": "1a39dc835a39a90ca9084e830caf54ec2f44bb0a635d1ba912650e87304ae8e9",
+        "tests/test_b.py": "70ce7b8095367dbc21c4b6bd2501a440c345922eeb1c66b5e75a80cea0891dbf"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "load_tests replaces automatic sentinel with a constructor-parameterized instance.",
+      "id": "F02",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F02/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_hook.py": "cdcc897ec730dab1dfe7ede1e50472c76dc7ca88d0057d1f0a1781e060ad84de"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Package hook reverses module order and excludes a failing child.",
+      "id": "F03",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F03/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/pkg/__init__.py": "12b294061f4f361bbeab75c6ade2dc0d4efc0c145abe6b7efc0b837eed5d744f",
+        "tests/pkg/test_a.py": "3e1c2d44ad0e9d6b50abdebd4ed6144397efb74af15fb31b1f16842042e89649",
+        "tests/pkg/test_b.py": "96fedcb6369708e61484195aff936b552f05e6fc142ce87df5ab9c229054ec0a",
+        "tests/pkg/test_ignored.py": "32c2d08924fab5b631571208f4197fb99a85dbea1f2a808e75d03b2a9a7f1999"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Same TestCase instance and native ID deliberately occur twice.",
+      "id": "F04",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F04/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_repeated.py": "0fb2cc5a185b51ba5bfa4b12de3c5f2e80629de62d6e944269645b1c775d26c4"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Successful module fixtures and multiple LIFO module cleanups.",
+      "id": "F05",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F05/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_module_cleanup.py": "1f8c337ccc2b72f4f9d048512519259175c7ef5e04aa003dd017f74ca8aad771"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Module setup error/skip retains cleanups and prevents bodies.",
+      "id": "F06",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F06/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_module_setup.py": "c521bf56779422a9b59523b0181a106c0e94bab8662b92ee4922bfe6f452e5ab"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Module setup error/skip retains cleanups and prevents bodies.",
+      "id": "F07",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F07/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_module_setup.py": "71a9cd216a9aa6f511dd0e47fb6e81554598c5d6d680fa67380b059c7c16e246"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Module teardown error still executes module cleanups.",
+      "id": "F08",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F08/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_module_teardown.py": "6382daa3a08fecba4ae93c5534076186324d684415db0648621d47835ac31817"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Class setup error/skip retains cleanups and prevents bodies.",
+      "id": "F09",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F09/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_class_setup.py": "d9d60b59d1cddbe0494cf2f3e7229aa2b22cf7430fcc9c9f785a0f3c0a6369f1"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Class setup error/skip retains cleanups and prevents bodies.",
+      "id": "F10",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F10/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_class_setup.py": "d4ec8f16881f4cd4213e079309a84e1db20067cfc5dc21b2e569ad9250e8425c"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Class teardown failure retains class cleanup ordering.",
+      "id": "F11",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F11/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_class_teardown.py": "761a4d561c8e602a467b58620f67b2685447eef665cbda82c5f2c6d4ba692a9c"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Test setup failure skips body/teardown and retains cleanups.",
+      "id": "F12",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F12/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_setup.py": "b0f1fb26e8d309d9358e318d1acfad3d15640491d6fe3c5b02c90f7bfe804d7a"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "One case emits body failure plus teardown/cleanup errors and continues cleanup.",
+      "id": "F13",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F13/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_multiple_events.py": "bd308c3e054fe91750ecb5370e7cdb7a71fd94aebd5baff23bc1e07cfc910559"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Pass, skip, expected failure and unexpected success stay distinct.",
+      "id": "F14",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F14/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_outcomes.py": "8f672ae73678153420d08fd743a2918e9d8d47c50bba480f4bde359710d82a78"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Repeated identical subtest labels retain all outcome multiplicities.",
+      "id": "F15",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F15/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_subtests.py": "0e4aa970e3886448816171884ecf467675b21f817d47203b259f4c22e0036c95"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Noncontiguous module order A/B/A must preserve re-entry or use atomic fallback.",
+      "id": "F16",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F16/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "support_a.py": "589cd43e84ef1667a7d5acf3341359b4c83ca016ae2dbdce4357e367bbd0aaef",
+        "support_b.py": "74ac29fa2f977d1102914c93229c58897e9d1c9d5d0bbad48ea892297dec55b2",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_order.py": "5b4362b163d907a31aa1409c1fb5578de68a6f6ba2f5c2cafed0307dc3283a71"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Noncontiguous class order Alpha/Beta/Alpha inside one module.",
+      "id": "F17",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F17/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_class_order.py": "e8489f93faed2a3a488090835b770f1f73038dade9639138a4bf8cdd1451b99b"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Custom suite run override must execute once around original cases.",
+      "id": "F18",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F18/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_custom_suite.py": "8bf0b145b659c50d9d1025bf684f09b05869994e470c7dee43ac2c16378fcd07"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Lazy iteration has observable state; no extra traversal is permitted.",
+      "id": "F19",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F19/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_lazy.py": "de973b3c8eae7bd1313cf11c456efba0dc8a7296737e2a74dc4cbd7409e62a34"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Custom TestCase.run sees cumulative result counters across modules.",
+      "id": "F20",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F20/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_a.py": "fbb0ab16d01eca771d0009345797196be6b02aa4619e1a285998e1c6c3adecd0",
+        "tests/test_b.py": "043b92954f4589417c86854a9b43d225ccdb43156be2abf1300197cf4062dbcc"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Import failure beside healthy native tests.",
+      "id": "F21",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F21/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_broken.py": "a4adb6392e3e2ba504c0777f3d1705cc8615f39c1ec843ccfaf2032bd0b55268",
+        "tests/test_healthy.py": "5ece9406096f9eb7cbfca01e814a21098b03ab3065b54af0a7375e7604b78755"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Syntax failure beside healthy native tests.",
+      "id": "F22",
+      "intentional_syntax_error": "tests/test_broken.py",
+      "native_start": "tests",
+      "project_key": "F22/syntax",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_broken.py": "e3d6d73bb532abf1206abc99e66e7a9e0a96699141f23e8619bc7510e9e15379",
+        "tests/test_healthy.py": "5ece9406096f9eb7cbfca01e814a21098b03ab3065b54af0a7375e7604b78755"
+      },
+      "variant": "syntax"
+    },
+    {
+      "description": "load_tests raises beside healthy native tests.",
+      "id": "F22",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F22/hook_error",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_broken.py": "c32952f163706e2345387b9e7baf83d813f527f20ee8f1569a5a1bcf9a44e488",
+        "tests/test_healthy.py": "5ece9406096f9eb7cbfca01e814a21098b03ab3065b54af0a7375e7604b78755"
+      },
+      "variant": "hook_error"
+    },
+    {
+      "description": "Empty discovery directory.",
+      "id": "F23",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F23/directory_empty",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "variant": "directory_empty"
+    },
+    {
+      "description": "load_tests returns an explicitly empty suite.",
+      "id": "F23",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F23/hook_empty",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_empty_hook.py": "288a1afa209c07ee3cf96c81151a144852dd5533c39504abdfa00962a4fa098e"
+      },
+      "variant": "hook_empty"
+    },
+    {
+      "description": "Fresh-process discovery version: base",
+      "id": "F24",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F24/base",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_changes.py": "15782faefa39fa363c225162642e762f5115dc1f2840343a32a95c77a20c9879"
+      },
+      "variant": "base"
+    },
+    {
+      "description": "Fresh-process discovery version: added",
+      "id": "F24",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F24/added",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_changes.py": "e64e73e72c1292a900d83172052b41ec7e9cf91e29af711ba9d88342b8c52dc5"
+      },
+      "variant": "added"
+    },
+    {
+      "description": "Fresh-process discovery version: removed",
+      "id": "F24",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F24/removed",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_changes.py": "6ea0ecc2ea5299a53635ac75f5e106401eb83b4052039e8585a322260401bc58"
+      },
+      "variant": "removed"
+    },
+    {
+      "description": "Warning filter mutation must persist across native module groups.",
+      "id": "F25",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F25/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_a.py": "9f805115a1477364f8c0152306924cbed929584db48c05eece5c6a8727af0b9f",
+        "tests/test_b.py": "6fa637d8a8b6031546f306b66caa7d95437492e850a18dcb448498a90917a979"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "KeyboardInterrupt remains incomplete, retaining preceding output and trace.",
+      "id": "F26",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F26/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_interrupt.py": "98cb27399670678945527ba80772804e200d939787c08131521342bd9031b90a"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Mixed pytest/native populations have separate namespaces and execute once.",
+      "id": "F27",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F27/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "ordinary_pytest_tests/test_frontend.py": "59545755437ac375d1ab9426899fe0fcc4e840998fe4b375747265291b606a01",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_native.py": "a9e18e0aace75b998657e36312ed1e631a25cb7bd0f10920576efa8ca9800900"
+      },
+      "variant": "main"
+    },
+    {
+      "description": "Two failing modules plus one passing module support actionable group reporting/selection.",
+      "id": "F28",
+      "intentional_syntax_error": null,
+      "native_start": "tests",
+      "project_key": "F28/main",
+      "source_sha256": {
+        "fixture_support.py": "a99b49410ab40c3000840165fd6cdd6f3bc8c873f65690deafdc010c325b9e0c",
+        "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/test_a.py": "1b28dbc246c2f8b46332de9c571d82697a7f4fc0b02d491e3699c594071af7e5",
+        "tests/test_b.py": "16260f73b7b0a71ecb8f4f67cfe9f72c36024743d77c540deb2fa1455f2dd26e",
+        "tests/test_c.py": "41a634966da20cd3830ea0aa222da2f571e3e4522c074fb2915cc03edfd4d664"
+      },
+      "variant": "main"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "F01-F28 only; source freeze before bridge implementation",
+  "trace_environment": "NATIVE_FIXTURE_TRACE",
+  "trace_format": "JSON array per line"
+}
